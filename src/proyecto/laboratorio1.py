@@ -12,8 +12,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def csv_to_json(csv_path: str = "file.csv", json_path: str = "file.json"):
-    """Read a CSV file, convert each row to a dict, and save it as JSON."""
+def csv_to_json(
+    csv_path: str = "file.csv",
+    json_path: str = "file.json",
+):
+    """Read a CSV file, convert each row to a dict,
+    and save it as JSON."""
     csv_file = Path(csv_path)
     json_file = Path(json_path)
 
@@ -39,9 +43,15 @@ def csv_to_json(csv_path: str = "file.csv", json_path: str = "file.json"):
         json.dump(rows, file, ensure_ascii=False, indent=2)
 
     logger.info("JSON file created successfully: %s", json_file)
-    logger.warning("This is a warning example for logging level demonstration.")
-    logger.error("This is an error example for logging level demonstration.")
-    logger.critical("This is a critical example for logging level demonstration.")
+    logger.warning(
+        "This is a warning example for logging level demonstration.",
+    )
+    logger.error(
+        "This is an error example for logging level demonstration.",
+    )
+    logger.critical(
+        "This is a critical example for logging level demonstration.",
+    )
 
     return rows
 
